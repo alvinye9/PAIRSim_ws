@@ -1,0 +1,30 @@
+/**:
+  ros__parameters:
+    monza:
+      csv_file: 'monza.csv'
+      # X, Y, Psi
+      init_pos: [0.0, 0.0, 1.57]
+      # X, Y, V, K
+      col_order: [0, 1, 2, 3]  # map does not have curvature
+          
+    lvms:
+      csv_file: 'vegas_centerline.csv' 
+      init_pos: [0.0, 0.0, -2.44346]
+      col_order: [0, 1, 2, 3]  # map does not have acc or curvature
+
+    kentucky:
+      csv_file: 'kentucky_centerline.csv'
+      init_pos: [0.0, 0.0, -2.51327]
+      col_order: [0, 1, 2, 3]    
+
+    ims:
+      csv_file: 'ims_centerline.csv'
+      init_pos: [0.0, 0.0, -1.5708]
+      col_order: [0, 1, 2, 3]     
+
+    lor:
+      csv_file: 'LOR_centerline.csv'
+      init_pos: [0.0, 0.0, -1.5708] #angle in Radians and ENU
+      col_order: [0, 1, 2, 3]  # map does not have acc or curvature
+
+

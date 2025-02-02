@@ -1,0 +1,58 @@
+AccelerationInterface:
+  ros__parameters:
+    mute: false
+    auto_enable: true
+    
+    # Run-time modifiable parameters
+    max_throttle_pct: 50.0
+    max_brake_kpa: 1400.0
+    max_accel_mps2: 3.0
+    max_decel_mps2: -6.0           # Slightly larger than -5.0 to allow for some error
+    # End Run-time modifiable parameters
+
+    max_msg_timeout_s: 0.5         # Max time between messages before graceful stopping
+    accel_graceful_stop_mps2: -5.0 # Note: limited by max_decel_mps2
+
+    ts_param: 1.0 # Param update rate
+
+    # A -> Area
+    # M -> Mass
+    # R -> Radius
+    # Mue -> Coefficient of friction
+
+    # General vehicle params
+    R_tire_fr_m: 0.3
+    R_tire_re_m: 0.31
+    M_vehicle_kg: 787.0
+    Ratio_diff_re: 3.0
+
+    # Aero parameters
+    A_vehicle_m2: 1.0      # Frontal area of vehicle
+    Coef_drag: 0.3
+    Roh_air: 1.22
+
+    # Braking parameters
+    A_caliper_mm2: 4448.0  # Total area of caliper pistons per wheel
+    R_brake_lever_m: 0.134 # Mean radius of brake lever
+    Mue_k_brake: 0.45      # Brake pad kinetic coefficient of friction
+
+    # Shifting parameters
+    Min_shift_delay_s: 2.0 # Delay between one shift command and the next
+    Shift_timeout_s: 0.7   # Time before commanding previous gear if gear is not changing
+
+    # Gearset parameters
+    # Upper Bounds (ub) found by optimizing total work in each gear
+    # Lower Bounds (lb) found by subtracting 500 from post-shift RPM
+    gearset:
+      gear1_lb_rpm: 0.0
+      gear1_ub_rpm: 3900.0
+      gear2_lb_rpm: 2000.0
+      gear2_ub_rpm: 4500.0
+      gear3_lb_rpm: 2815.0
+      gear3_ub_rpm: 4800.0
+      gear4_lb_rpm: 3375.0
+      gear4_ub_rpm: 5000.0
+      gear5_lb_rpm: 3785.0
+      gear5_ub_rpm: 4800.0
+      gear6_lb_rpm: 3980.0
+      gear6_ub_rpm: 6000.0

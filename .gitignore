@@ -1,0 +1,65 @@
+# Ignore ROS 2 build directories
+build/
+install/
+log/
+
+# Colcon and CMake temporary files
+.colcon/
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Python virtual environments and cache
+venv/
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+
+# VS Code settings and temporary files
+.vscode/
+*.swp
+*.swo
+
+# ROS 2 package-specific ignores
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+
+# Ignore Unity-related files if applicable
+Library/
+Temp/
+Logs/
+UserSettings/
+
+# Ignore Docker files if using Docker for ROS
+docker_build/
+*.dockerfile
+*.env
+
+# Ignore compiled executables and other binary artifacts
+*.so
+*.o
+*.out
+*.a
+*.exe
+*.dll
+*.dSYM/
+
+# Ignore any temporary or personal config files
+*.bak
+*.tmp
+*.old
+
+# Ignore JetBrains IDE (CLion, PyCharm) and Eclipse project files
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+
+# Ignore ROS 2 package dependencies installed via colcon
+dependencies/
+

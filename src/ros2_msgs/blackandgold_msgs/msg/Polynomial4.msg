@@ -1,0 +1,3 @@
+std_msgs/Float32MultiArray polynomial
+std_msgs/Float32 x_min
+std_msgs/Float32 x_max

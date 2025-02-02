@@ -1,0 +1,48 @@
+MPC_Node:
+  ros__parameters:
+    
+    # MPC Parameters
+    prediction_ts: 0.08
+    velocity_error_weight: 5.0
+    lateral_error_weight: 40.0
+    lateral_error_velocity_weight: 5.0
+    R_weight: 1.0
+    acceleration_weight: 3
+    horizon_length: 8
+    rho_slack: 0.0
+    
+    # Predict Model Parameters
+    bicycle:
+      sample_t: 0.02
+      Iz: 800.0
+      l_F: 1.7
+      l_R: 1.2
+      m: 787.0
+      D_f: 1.5
+      D_r: 1.5
+      B_f: 5.0
+      B_r: 5.0
+      C_f: 2.35
+      C_r: 2.35
+      C_lf: -0.65
+      C_lr: -1.18
+      Cor_F: 55000.0
+      Cor_R: 75000.0
+
+
+  
+
+  # self.node.declare_parameter('bicycle.Iz', value=800.0) # moment of inertia kg*m^2
+        # self.node.declare_parameter('bicycle.l_F', value=1.7) #m
+        # self.node.declare_parameter('bicycle.l_R', value=1.2)
+        # self.node.declare_parameter('bicycle.m', value=787) #kg
+        # self.node.declare_parameter('bicycle.D_f', value=1.5)  # pacejka coeff from parameter
+        # self.node.declare_parameter('bicycle.D_r', value=1.5) # pacejka coeff from parameter
+        # self.node.declare_parameter('bicycle.B_f', value=5.0)
+        # self.node.declare_parameter('bicycle.B_r', value=5.0)
+        # self.node.declare_parameter('bicycle.C_f', value=2.35)# from simulation parameters
+        # self.node.declare_parameter('bicycle.C_r', value=2.35)
+        # self.node.declare_parameter('bicycle.C_lf', value=-0.65) # Coefficient of lift, front
+        # self.node.declare_parameter('bicycle.C_lr', value=-1.18) # Coefficient of lift, rear
+        # self.node.declare_parameter('bicycle.Cor_F', value=55000.0) # N/rad
+        # self.node.declare_parameter('bicycle.Cor_R', value=75000.0) # N/rad

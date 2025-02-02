@@ -1,0 +1,37 @@
+/CoupledADRCNode:
+  ros__parameters:
+    auto_enabled: true
+    mute: false
+    debug: true # Sends signals that are useful for debugging problems in the controller
+    min_lookahead: 10.0
+    max_lookahead: 50.0
+    lookahead_speed_ratio: 0.6 # 0.6
+    proportional_gain: 0.31     # Original: 0.2
+    derivative_gain: 0.02       # Original: 0
+    max_steer_angle: 17.5
+    K1l: 3.0
+    K1: 24.0 
+    K2: 120.0
+    K3: 5.0
+    K4: 25.0
+    steering_override_threshold: 4.0
+    vehicle:
+      wheelbase: 2.9718
+      cg_to_front: 1.723644
+      cg_to_rear: 1.248156
+      tire_stiffness_front: 100000.0
+      tire_stiffness_rear: 100000.0
+      mass: 720.0
+      inertia: 1000.0
+    
+    disturbance_model: 2 # Can be either 2 for ramp and 1 for step, the default is 1
+      
+    max_lat_error: 3.0
+    max_lookahead_error: 4.0
+    
+    max_one_step_lat_err_rate: 2000.0 # max allowed one-step change divided by time difference
+    max_avg_lat_err_rate: 1000.0 # max allowed average change divided by time history duration
+    lat_err_history_length: 4 # time history length
+    curv_to_velocity_constant: 2.0 #0.5 # converts path curvature to max velocity 
+    max_possible_deceleration: 2.0 #2.0
+    dummy_param: 0.0 

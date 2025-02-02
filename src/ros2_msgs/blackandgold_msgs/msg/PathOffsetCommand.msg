@@ -1,0 +1,4 @@
+std_msgs/Header header
+float32 leftwards_offset
+float32 effective_from_distance
+float32 effective_until_distance

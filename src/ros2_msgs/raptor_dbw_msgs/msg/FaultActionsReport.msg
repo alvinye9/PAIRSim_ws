@@ -1,0 +1,12 @@
+std_msgs/Header header
+
+bool autonomous_disabled_no_brakes 
+bool autonomous_disabled_apply_brakes 
+bool can_gateway_disabled 
+bool inverter_contactor_disabled 
+bool prevent_enter_autonomous_mode 
+bool warn_driver_only 
+bool chime_fcw_beeps
+uint16 last_active_fault_idx
+bool estop_btn_pressed
+ButtonState remote_estop_btn_pressed

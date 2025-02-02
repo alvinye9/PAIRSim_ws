@@ -1,0 +1,15 @@
+float32 left_dist
+float32 left_speed
+autoware_auto_perception_msgs/TrackedObject left_object
+
+float32 right_dist
+float32 right_speed
+autoware_auto_perception_msgs/TrackedObject right_object
+
+float32 front_dist
+float32 front_speed
+autoware_auto_perception_msgs/TrackedObject front_object
+
+float32 back_dist
+float32 back_speed
+autoware_auto_perception_msgs/TrackedObject back_object

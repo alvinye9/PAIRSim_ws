@@ -1,0 +1,17 @@
+float32 yaw   
+float32 yaw_ref  
+float32 yaw_rate_des
+float32 yaw_rate
+float32 yaw_hat
+float32 yaw_rate_hat
+float32 xi_long_hat
+float32 xi_lat_hat
+float32 lat_error
+float32 lookahead_error
+float32 steering
+float32 sideslip_angle
+float32 traction_force
+float32 long_speed
+float32 long_speed_hat
+float32 lat_speed
+float32 lat_speed_hat

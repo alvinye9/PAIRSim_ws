@@ -1,0 +1,138 @@
+simulator:
+  ros__parameters:
+    cog_frame: "center_of_gravity"
+
+    # Vegas Pit:
+    init_lla: [36.274437, -115.011400, 568.974] # Latitude, Longitude, Altitude
+    init_head: [0.0, 0.0, 1.57] # RPY radians
+
+    #
+    # GPS Sensors
+    #
+    gps0: "/novatel_top/fix"
+    gps0_frame: "gps_top_ant1"
+    gps0_update_rate: 50.0
+
+    # Latitude, Longitude, Altitude (NOTE: Variance in m^2, not deg^2)
+    gps0_variance: [0.01, 0.01, 0.01]
+    gps0_pub_variance: [0.01, 0.01, 0.01]
+
+    gps1: "/novatel_bottom/fix"
+    gps1_frame: "gps_bottom_ant1"
+    gps1_update_rate: 50.0
+
+    gps1_variance: [0.01, 0.01, 0.01]
+    gps1_pub_variance: [0.01, 0.01, 0.01]
+
+    #
+    # Imu Sensors
+    #
+    imu0: "/novatel_top/imu/data"
+    imu0_frame: "gps_top"
+    imu0_update_rate: 100.0
+    imu0_add_gravity: false
+    imu0_has_orientation: true
+
+    # Phi, Theta, Psi, dPhi, dTheta, dPsi, ax, ay, az
+    # imu0_variance: [0.0001, 0.0001, 0.0001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+    # imu0_pub_variance: [0.0001, 0.0001, 0.0001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+    # imu0_bias_mean: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    # imu0_bias_variance: [0.0, 0.0, 0.0, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01]
+    # imu0_drift_variance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+    imu1: "/novatel_bottom/imu/data"
+    imu1_frame: "gps_bottom"
+    imu1_update_rate: 100.0
+    imu1_add_gravity: false
+    imu1_has_orientation: true
+
+    # Left out params set to 0
+    # imu1_variance: [0.0001, 0.0001, 0.0001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+    # imu1_pub_variance: [0.0001, 0.0001, 0.0001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+    # imu1_bias_variance: [0.0, 0.0, 0.0, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01]
+
+    imu2: "/novatel_top/imu/data_raw"
+    imu2_frame: "gps_top_imu"
+    imu2_update_rate: 100.0
+    imu2_add_gravity: true
+    imu2_has_orientation: false
+
+    # imu2_variance: [0.0, 0.0, 0.0, 0.002, 0.002, 0.002, 0.002, 0.002, 0.002]
+    # imu2_pub_variance: [0.0001, 0.0001, 0.0001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+    # imu2_bias_variance: [0.0, 0.0, 0.0, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01]
+
+    imu3: "/novatel_bottom/imu/data_raw"
+    imu3_frame: "gps_bottom_imu"
+    imu3_update_rate: 100.0
+    imu3_add_gravity: true
+    imu3_has_orientation: false
+
+    # imu3_variance: [0.0, 0.0, 0.0, 0.002, 0.002, 0.002, 0.002, 0.002, 0.002]
+    # imu3_pub_variance: [0.0001, 0.0001, 0.0001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+    # imu3_bias_variance: [0.0, 0.0, 0.0, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01]
+
+    #
+    # Twist Sensors
+    #
+    twist0: "/novatel_top/ins_twist"
+    twist0_frame: "gps_top"
+    twist0_update_rate: 100.0
+
+    # Vx, Vy, Vz, dPhi, dTheta, dPsi
+    # twist0_variance: [0.01, 0.01, 0.01, 0.01, 0.01, 0.01]
+    # twist0_pub_variance: [1.0, 1.0, 0.8, 0.0, 0.0, 0.0]
+
+    twist1: "/novatel_bottom/ins_twist"
+    twist1_frame: "gps_bottom"
+    twist1_update_rate: 100.0
+
+    # twist1_variance: [0.01, 0.01, 0.01, 0.01, 0.01, 0.01]
+    # twist1_pub_variance: [1.0, 1.0, 0.8, 0.0, 0.0, 0.0]
+
+    #
+    # Odom Sensors
+    #
+    odom0: "/novatel_top/odom"
+    odom0_frame: "gps_top_ant1"
+    odom0_update_rate: 100.0
+    odom0_use_utm: false
+
+    # x, y, z, Phi, Theta, Psi, Vx, Vy, Vz, dPhi, dTheta, dPsi
+    # odom0_variance: [0.01, 0.01, 0.01, 0.0001, 0.0001, 0.0001, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01]
+    # odom0_pub_variance: [0.01, 0.01, 0.01, 0.0001, 0.0001, 0.0001, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01]
+
+    odom1: "/novatel_bottom/odom"
+    odom1_frame: "gps_bottom_ant1"
+    odom1_update_rate: 100.0
+    odom1_use_utm: false
+
+    # odom1_variance: [0.01, 0.01, 0.01, 0.0001, 0.0001, 0.0001, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01]
+    # odom1_pub_variance: [0.01, 0.01, 0.01, 0.0001, 0.0001, 0.0001, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01]
+
+    #
+    # Wheel Encoder Sensors
+    #
+    ws0: "/raptor_dbw_interface/wheel_speed_report"
+    ws0_update_rate: 100.0
+
+    # Front Left, Front Right, Rear Left, Rear Right [km/hr]
+    ws0_wheel_radius: [0.3, 0.3, 0.3, 0.3]
+    # ws0_variance: [0.01, 0.01, 0.01, 0.01]
+    # ws0_pub_variance: [0.01, 0.01, 0.01, 0.01]
+    # ws0_bias_mean: [0.0, 0.0, 0.0, 0.0]
+    # ws0_bias_variance: [0.0, 0.0, 0.0, 0.0]
+    # ws0_drift_variance: [0.0, 0.0, 0.0, 0.0]
+
+    #
+    # Ground truth odom sensor
+    #
+    odom1: "/odometry/global_filtered"
+    odom1_frame: "center_of_gravity"
+    odom1_update_rate: 100.0
+
+    odom2: "/odometry/local_filtered"
+    odom2_frame: "center_of_gravity"
+    odom2_update_rate: 100.0
+
+
+

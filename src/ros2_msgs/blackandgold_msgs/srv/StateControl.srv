@@ -1,0 +1,4 @@
+int8 requested_state
+---
+bool success
+string message

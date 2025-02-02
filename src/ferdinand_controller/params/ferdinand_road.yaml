@@ -1,0 +1,43 @@
+/StanleyAdrcNode:
+  ros__parameters:
+    auto_enabled: true
+    debug: true # Sends signals that are useful for debugging problems in the controller
+    min_lookahead: 10.0
+    max_lookahead: 50.0
+    lookahead_speed_ratio: 0.6 # 0.6
+    proportional_gain: 0.31     # Original: 0.2
+    derivative_gain: 0.02       # Original: 0
+    max_steer_angle: 17.5
+    K1: 2.5        # proportion term for lat error controller
+    K1d: 0.0       # derivative term for lat error controller
+    K1sat: 0.1     # output saturation for lat error controller (radians)
+    K2: 120.0      # proportion term for heading controller
+    K2d: 20.0      # derivative term for heading controller
+    K3: 0.75       # gain for injecting desired yaw rate as given by path curvature # 2.43
+    K3sat: 100.0   # saturation for curvature. Ideally this would be infinity. Note: this can be low for ovals but care should be taken that it isn't too low for road courses. This should equal the max curvature (radians per longitudinal meter) of the tightest turn
+    K4: 0.0        # multiplier for path heading lookahead distance
+    K4_curv: 4.0   # multiplier for curvature lookahead distance should be around K4/10
+    K1l: 3.0       # gain for longitudinal controller
+    cascade_mod: 2 # 100 mod cascade_mod is used to control the lat error cascade loop
+    steering_override_threshold: 4.0
+    
+    vehicle:
+      wheelbase: 2.9718
+      cg_to_front: 1.723644
+      cg_to_rear: 1.248156
+      tire_stiffness_front: 100000.0
+      tire_stiffness_rear: 100000.0
+      mass: 720.0
+      inertia: 1000.0
+    
+    disturbance_model: 2 # Can be either 2 for ramp and 1 for step, the default is 1
+      
+    max_lat_error: 0.7
+    max_lookahead_error: 2.0
+    
+    max_one_step_lat_err_rate: 2000.0 # max allowed one-step change divided by time difference
+    max_avg_lat_err_rate: 1000.0 # max allowed average change divided by time history duration
+    lat_err_history_length: 4 # time history length
+    curv_to_velocity_constant: 0.8 # converts path curvature to max velocity 
+    max_possible_deceleration: 0.25 # maximum deceleration we should assume to slow the car down for a turn
+    dummy_param: 0.0 

@@ -1,0 +1,53 @@
+deep_orange_msgs 0.3.3, 2023-07-14
+-----------------------
+- Added race_control_pit_summon, race_control_pass_allowed, and race_control_defend_passing fields
+in CtReport to show reasoned flag logic.
+
+deep_orange_msgs 0.3.2, 2023-07-06
+-----------------------
+- Merged MyLaps and Marelli system formulations in the same RcToCt message type. Dispatch to the
+appropriate systems are assumed to be handled by the raptor driver.
+- Merged MylapsReport and MarelliReport in the same RaceControlPosReport, for feeding back GPS
+locations in an emergency. Parsing of these messages are assumed to be handled by the raptor driver.
+- Deprecated BaseToCarSummary.msg
+- Renamed veh_flag to vehicle_flag, renamed veh_rank to vehicle_rank. Renamed CtReport.msg fields
+for readability. Rename rc_flag to track_flag in Telemetry.msg. Disambiguate
+LapTimeReport.msg/time_stamp.
+
+deep_orange_msgs 0.3.1, 2023-06-30
+-----------------------
+- Compatibility with V14 DBC file, with added fields and compatibility with Marelli race control
+systems
+- Added MarelliReport
+- Added Marelli-related fields in RcToCt
+- Added driver_traction_aim_switch and driver_traction_range_switch fields in PtReport
+
+deep_orange_msgs 0.3.0, 2022-12-16
+-----------------------
+- Compatibility with V11 DBC file
+- Added MylapsReport
+- Added wheel_torque_total field in PtReport
+
+deep_orange_msgs 0.2.0, 2022-09-15
+-----------------------
+- Compile for ROS 2 Galactic and ROS 2 Humble
+
+deep_orange_msgs 0.1.0, 2021-10-21
+-----------------------
+- First stable version of deep_orange_msgs
+- Added veh_num field in CtReport
+- Added DiagnosticReport, LapTimeReport, ObstacleState, ObstacleArray, Telemetry
+- Refactored RcToCtReport: consolidate flags from one-hot encoding to uint8
+
+deep_orange_msgs 0.0.1, 2021-09-27
+-----------------------
+- Initial commit derived from IAC base vehicle software. Included message types:
+  - BaseToCarSummary
+  - BrakeTempReport
+  - Coordinates
+  - CtReport
+  - JoystickCommand
+  - MiscReport
+  - PtReport
+  - RcToCtReport
+  - TireReport
