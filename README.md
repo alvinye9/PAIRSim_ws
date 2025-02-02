@@ -18,11 +18,7 @@ cd simulator_ws
 source /opt/ros/humble/setup.bash
 colcon build --symlink-install
 source install/setup.bash
-ros2 launch sim_launch launch_sim.launch.py
-```
--or-
-```
-./run.sh 
+ros2 launch sim_launch launch_sim.launch.py 
 ```
 
 
@@ -45,7 +41,7 @@ Then, you can pass the map launch argument to the launch_sim launch file:
 
 `ros2 launch sim_launch launch_sim.launch.py map:=lvms`
 
-The `csv_file` and `col_order` parameters are passed to the planner emulator, while the `init_pos` is passed to the CGS.
+The `csv_file` and `col_order` parameters are passed to the planner emulator
 
 **Adding Controllers**
 
