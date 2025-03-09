@@ -97,7 +97,7 @@ To launch your controller, use:
 
 **Specifying Parameters via Command Line**
 
-For more instructions on navigating the PAIRSIM GUI, see Step 3 https://github.itap.purdue.edu/Purdue-AI-Racing/on-vehicle/wiki/Running-PAIRSIM-with-on%E2%80%90vehicle
+<!-- For more instructions on navigating the PAIRSIM GUI, see Step 3 https://github.itap.purdue.edu/Purdue-AI-Racing/on-vehicle/wiki/Running-PAIRSIM-with-on%E2%80%90vehicle -->
 
 map:= [options: monza, lvms, ims, kentucky, lor]
 
